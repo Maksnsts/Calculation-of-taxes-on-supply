@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Zadanie zdalne e-MSI</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  </head>
+
+<body>
+
+
+
+  <div id="lewy">
+      <ol>
+        <a href="rozne_kontrolki_html.php"><li>Różne kontrolki HTML</li></a>
+        <a href="tabela_pracownikow.php"><li>Tabela Pracowników</li></a>
+        <a href="tabela_faktur_vat.php"><li>Tabela faktura VAT</li></a>
+        <a href="tabela_delegacji_db.php"><li>Tabela delegacji BD</li></a>
+        <a href="dane_kontrahentow.php"><li>Dane kontrahentów</li></a>
+      </ol>
+  </div>
+
+  <div id="prawy">
+    <table id="tabela2">
+  <tr class="tabela1_1">
+    <th>Lp.</th>
+    <th>OPIS</th>
+    <th>MPK</th>
+    <th>Kwota Netto</th>
+    <th>Ilość</th>
+    <th>VAT</th>
+    <th>Kwota Brutto</th>
+    <th>Wartość Netto</th>
+    <th>Wartość Brutto</th>
+  </tr>
+  <tr class="tabela1_2">
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+    <td><input type="number" id="kwota_netto1" min="0"></td>
+    <td><input type="number" id="ilosc1" min="1"></td>
+    <td>      <select id="vat1">
+        <option>ZW</option>
+        <option>NP.</option>
+        <option>0%</option>
+        <option>3%</option>
+        <option>8%</option>
+        <option>23%</option>
+
+      </select></td>
+  <td><input type="text" id="kwotta_brutto1" readonly></td>
+    <td><input type="text" id="wartosc_netto1" readonly></td>
+    <td><input type="text" id="wartosc_brutto1" readonly></td>
+  </tr>
+  <tr class="tabela1_1">
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+    <td><input type="number" id="kwota_netto2" min="0"></td>
+    <td><input type="number" id="ilosc2" min="1"></td>
+    <td>      <select id="vat2">
+        <option>ZW</option>
+        <option>NP.</option>
+        <option>0%</option>
+        <option>3%</option>
+        <option>8%</option>
+        <option>23%</option>
+
+      </select></td>
+   <td><input type="text" id="kwotta_brutto2" readonly></td>
+    <td><input type="text" id="wartosc_netto2" readonly></td>
+    <td><input type="text" id="wartosc_brutto2" readonly></td>
+  </tr>
+  <tr class="tabela1_2">
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+    <td><input type="number" id="kwota_netto3" min="0"></td>
+    <td><input type="number" id="ilosc3" min="1"></td>
+    <td>      <select id="vat3">
+        <option>ZW</option>
+        <option>NP.</option>
+        <option>0%</option>
+        <option>3%</option>
+        <option>8%</option>
+        <option>23%</option>
+
+      </select></td>
+    <td><input type="text" id="kwotta_brutto3" readonly></td>
+    <td><input type="text" id="wartosc_netto3" readonly></td>
+    <td><input type="text" id="wartosc_brutto3" readonly></td>
+  </tr>
+  <tr class="tabela1_1">
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+    <td><input type="number" id="kwota_netto4" min="0"></td>
+    <td><input type="number" id="ilosc4" min="1"></td>
+    <td>      <select id="vat4">
+        <option>ZW</option>
+        <option>NP.</option>
+        <option>0%</option>
+        <option>3%</option>
+        <option>8%</option>
+        <option>23%</option>
+
+      </select></td>
+    <td><input type="text" id="kwotta_brutto4" readonly></td>
+    <td><input type="text" id="wartosc_netto4" readonly></td>
+    <td><input type="text" id="wartosc_brutto4" readonly></td>
+  </tr>
+  <tr class="tabela1_2">
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+    <td><input type="number" id="kwota_netto5" min="0"></td>
+    <td><input type="number" id="ilosc5" min="1"></td>
+    <td>   <select id="vat5">
+        <option>ZW</option>
+        <option>NP.</option>
+        <option>0%</option>
+        <option>3%</option>
+        <option>8%</option>
+        <option>23%</option>
+      </select></td>
+    <td><input type="text" id="kwotta_brutto5" readonly></td>
+    <td><input type="text" id="wartosc_netto5" readonly></td>
+    <td><input type="text" id="wartosc_brutto5" readonly></td>
+  </tr>
+
+</table>
+
+<button id="btn_oblicz" onclick="btnWiecej1000()">Powyżej 1000,00 zł Netto</button>
+<button id="btn_oblicz" onclick="btnOblicz()">Oblicz</button>
+  </div>
+
+<!--kod js do przycisku powyżej 1000 zł netto -->
+<!--kod js do obliczania kwoty brutto itd. -->
+<!--wyniesc javascript w osobny plik -->
+ <script type="text/javascript">
+function btnWiecej1000(){
+  var kwottaNetto1 = document.getElementById("kwota_netto1");
+  var kwottaNetto2 = document.getElementById("kwota_netto2");
+  var kwottaNetto3 = document.getElementById("kwota_netto3");
+  var kwottaNetto4 = document.getElementById("kwota_netto4");
+  var kwottaNetto5 = document.getElementById("kwota_netto5");
+  if(kwottaNetto1.value > 1000){
+    kwottaNetto1.style.backgroundColor = "#98FB98";
+  }else{
+    kwottaNetto1.style.backgroundColor = "white"
+  }
+  if(kwottaNetto2.value > 1000){
+    kwottaNetto2.style.backgroundColor = "#98FB98";
+  }else{
+    kwottaNetto2.style.backgroundColor = "white"
+  }
+  if(kwottaNetto3.value > 1000){
+    kwottaNetto3.style.backgroundColor = "#98FB98";
+  }else{
+    kwottaNetto3.style.backgroundColor = "white"
+  }
+  if(kwottaNetto4.value > 1000){
+    kwottaNetto4.style.backgroundColor = "#98FB98";
+  }else{
+    kwottaNetto4.style.backgroundColor = "white"
+  }
+  if(kwottaNetto5.value > 1000){
+    kwottaNetto5.style.backgroundColor = "#98FB98";
+  }else{
+    kwottaNetto5.style.backgroundColor = "white"
+  }
+
+}
+
+function btnOblicz(){
+  //oblicz 1
+          var kwottaNetto1 = document.getElementById("kwota_netto1").value;
+          var ilosc1 = document.getElementById("ilosc1").value;
+
+          var e1 = document.getElementById("vat1");
+          var vat1 = e1.options[e1.selectedIndex].value;
+          var kwottaBrutto1 = document.getElementById("kwotta_brutto1");
+          var wartoscNetto1 = document.getElementById("wartosc_netto1");
+          var wartoscBrutto1 = document.getElementById("wartosc_brutto1");
+
+          if(ilosc1 <= 0){
+            ilosc1 = 1;
+          }
+          if(vat1 == "ZW" || vat1 == "NP."){
+            //kwottaBrutto2.value = parseFloat(kwottaNetto4).toFixed(2);
+            vat1 = 0;
+          }
+
+          kwottaBrutto1.value = parseFloat(kwottaNetto1 * (1 + parseFloat(vat1)/100)).toFixed(2);
+          wartoscNetto1.value = parseFloat(kwottaNetto1 * ilosc1).toFixed(2);
+          wartoscBrutto1.value = parseFloat(kwottaBrutto1.value * ilosc1).toFixed(2);
+  //oblicz 2
+          var kwottaNetto2 = document.getElementById("kwota_netto2").value;
+          var ilosc2 = document.getElementById("ilosc2").value;
+
+          var e2 = document.getElementById("vat2");
+          var vat2 = e2.options[e2.selectedIndex].value;
+          var kwottaBrutto2 = document.getElementById("kwotta_brutto2");
+          var wartoscNetto2 = document.getElementById("wartosc_netto2");
+          var wartoscBrutto2 = document.getElementById("wartosc_brutto2");
+
+          if(ilosc2 <= 0){
+            ilosc2 = 1;
+          }
+          if(vat2 == "ZW" || vat2 == "NP."){
+            //kwottaBrutto2.value = parseFloat(kwottaNetto4).toFixed(2);
+            vat2 = 0;
+          }
+
+          kwottaBrutto2.value = parseFloat(kwottaNetto2 * (1 + parseFloat(vat2)/100)).toFixed(2);
+          wartoscNetto2.value = parseFloat(kwottaNetto2 * ilosc2).toFixed(2);
+          wartoscBrutto2.value = parseFloat(kwottaBrutto2.value * ilosc2).toFixed(2);
+  //oblicz 3
+          var kwottaNetto3 = document.getElementById("kwota_netto3").value;
+          var ilosc3 = document.getElementById("ilosc3").value;
+
+          var e3 = document.getElementById("vat3");
+          var vat3 = e3.options[e3.selectedIndex].value;
+          var kwottaBrutto3 = document.getElementById("kwotta_brutto3");
+          var wartoscNetto3 = document.getElementById("wartosc_netto3");
+          var wartoscBrutto3 = document.getElementById("wartosc_brutto3");
+
+          if(ilosc3 <= 0){
+            ilosc3 = 1;
+          }
+          if(vat3 == "ZW" || vat3 == "NP."){
+            //kwottaBrutto3.value = parseFloat(kwottaNetto4).toFixed(2);
+            vat3 = 0;
+          }
+
+          kwottaBrutto3.value = parseFloat(kwottaNetto3 * (1 + parseFloat(vat3)/100)).toFixed(2);
+          wartoscNetto3.value = parseFloat(kwottaNetto3 * ilosc3).toFixed(2);
+          wartoscBrutto3.value = parseFloat(kwottaBrutto3.value * ilosc3).toFixed(2);
+
+  //oblicz 4
+          var kwottaNetto4 = document.getElementById("kwota_netto4").value;
+          var ilosc4 = document.getElementById("ilosc4").value;
+
+          var e4 = document.getElementById("vat4");
+          var vat4 = e4.options[e4.selectedIndex].value;
+          var kwottaBrutto4 = document.getElementById("kwotta_brutto4");
+          var wartoscNetto4 = document.getElementById("wartosc_netto4");
+          var wartoscBrutto4 = document.getElementById("wartosc_brutto4");
+
+          if(ilosc4 <= 0){
+            ilosc4 = 1;
+          }
+          if(vat4 == "ZW" || vat4 == "NP."){
+            //kwottaBrutto4.value = parseFloat(kwottaNetto4).toFixed(2);
+            vat4 = 0;
+          }
+
+          kwottaBrutto4.value = parseFloat(kwottaNetto4 * (1 + parseFloat(vat4)/100)).toFixed(2);
+          wartoscNetto4.value = parseFloat(kwottaNetto4 * ilosc4).toFixed(2);
+          wartoscBrutto4.value = parseFloat(kwottaBrutto4.value * ilosc4).toFixed(2);
+
+
+    //oblicz 5
+          var kwottaNetto5 = document.getElementById("kwota_netto5").value;
+          var ilosc5 = document.getElementById("ilosc5").value;
+
+          var e5 = document.getElementById("vat5");
+          var vat5 = e5.options[e5.selectedIndex].value;
+          var kwottaBrutto5 = document.getElementById("kwotta_brutto5");
+          var wartoscNetto5 = document.getElementById("wartosc_netto5");
+          var wartoscBrutto5 = document.getElementById("wartosc_brutto5");
+
+          if(ilosc5 <= 0){
+            ilosc5 = 1;
+          }
+          if(vat5 == "ZW" || vat5 == "NP."){
+            vat5 = 0;
+          }
+        
+          kwottaBrutto5.value = parseFloat(kwottaNetto5 * (1 + parseFloat(vat5)/100)).toFixed(2);
+          wartoscNetto5.value = parseFloat(kwottaNetto5 * ilosc5).toFixed(2);
+          wartoscBrutto5.value = parseFloat(kwottaBrutto5.value * ilosc5).toFixed(2);
+
+        }
+
+        </script>
+
+</body>
+</html>

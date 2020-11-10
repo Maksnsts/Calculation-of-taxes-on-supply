@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Zadanie zdalne e-MSI</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  </head>
+
+<body>
+
+  <div id="lewy">
+      <ol>
+        <a href="rozne_kontrolki_html.php"><li>Różne kontrolki HTML</li></a>
+        <a href="tabela_pracownikow.php"><li>Tabela Pracowników</li></a>
+        <a href="tabela_faktur_vat.php"><li>Tabela faktura VAT</li></a>
+        <a href="tabela_delegacji_db.php"><li>Tabela delegacji BD</li></a>
+        <a href="dane_kontrahentow.php"><li>Dane kontrahentów</li></a>
+      </ol>
+  </div>
+
+  <div id="prawy">
+    <table id="tabela1">
+  <tr class="tabela1_1">
+    <th>Lp.</th>
+    <th>Imie</th>
+    <th>Nazwisko</th>
+    <th>Stanowisko</th>
+    <th>Data zatrudnienia</th>
+    <th>Ilość dni urlopowych</th>
+  </tr>
+  <tr class="tabela1_2" id="tab1">
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+    <td>Germany</td>
+  </tr>
+  <tr class="tabela1_1" id="tab2">
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+    <td>Mexico</td>
+  </tr>
+  <tr class="tabela1_2" id="tab3">
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+    <td>Austria</td>
+  </tr>
+  <tr class="tabela1_1" id="tab4">
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+    <td>UK</td>
+  </tr>
+  <tr class="tabela1_2" id="tab5" >
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+
+</table>
+
+  <input type="text" name="hex_odd" id="hex_odd">
+  <input type="color" name="color_odd" id="color_odd">
+  <br>
+  <input type="text" name="hex_even" id="hex_even">
+  <input type="color" name="color_even" id="color_even">
+<!--kod js do pickera kolorów -->
+  </div>
+
+  <script type="text/javascript">
+      let colorInputOdd = document.getElementById("color_odd");
+      let hexInputOdd = document.getElementById("hex_odd");
+
+      let colorInputEven = document.getElementById("color_even");
+      let hexInputEven = document.getElementById("hex_even");
+
+      let tableCells1 = document.getElementById("tab1");
+      let tableCells2 = document.getElementById("tab2");
+      let tableCells3 = document.getElementById("tab3");   // lepiej to robić przez getElementsByClassName lub pool, 
+      let tableCells4 = document.getElementById("tab4");
+      let tableCells5 = document.getElementById("tab5");
+
+      colorInputOdd.addEventListener('input', () =>{
+          let color = colorInputOdd.value;
+          hexInputOdd.value = color;
+          tableCells1.style.backgroundColor = color;
+          tableCells3.style.backgroundColor = color;
+          tableCells5.style.backgroundColor = color;
+          
+          //document.row.style.backgroundColor = color;
+      });
+
+      colorInputEven.addEventListener('input', () =>{
+          let color = colorInputEven.value;
+          hexInputEven.value = color;
+          tableCells2.style.backgroundColor = color;
+          tableCells4.style.backgroundColor = color;
+          //tableCells5.style.backgroundColor = color;
+          
+          //document.row.style.backgroundColor = color;
+      });
+</script>
+
+</body>
+</html>
